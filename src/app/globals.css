@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #F8F4EC;
+    --bg-secondary: #EFE7DA;
+    --bg-card: #FFFFFF;
+    --accent-gold: #C62828;
+    --accent-gold-light: #E53935;
+    --accent-red: #C62828;
+    --accent-success: #2E7D32;
+    --accent-warning: #F9A825;
+    --text-primary: #222222;
+    --text-muted: #666666;
+    --border-default: #E5DED3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: Inter, Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  h1 { font-size: clamp(2rem, 5vw, 3.75rem); line-height: 1.05; }
+  h2 { font-size: clamp(1.5rem, 4vw, 2.75rem); line-height: 1.12; }
+  h3 { font-size: 1.25rem; line-height: 1.25; }
+  h1, h2, h3, h4 { font-family: Inter, Roboto, sans-serif; font-weight: 800; letter-spacing: -0.02em; }
+  ::selection { background-color: var(--accent-gold); color: #fff; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-primary); }
+  ::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 999px; }
+}
+
+@layer utilities {
+  .text-gold { color: var(--accent-gold); }
+  .bg-card { background-color: var(--bg-card); }
+  .border-gold { border-color: var(--accent-gold); }
+  .gold-line { width: 3rem; height: 3px; background: var(--accent-gold); }
+  .section-padding { padding: 5rem 1rem; }
+  .brand-card { background: #fff; border: 1px solid #E5DED3; border-radius: 1rem; box-shadow: 0 18px 45px rgba(34,34,34,0.06); }
+  @media (min-width: 768px) { .section-padding { padding: 6rem 2rem; } }
+}
+
+@media print {
+  html, body { background: #ffffff !important; color: #000000 !important; }
+  .no-print, nav, footer:not(.print-area footer) { display: none !important; }
+  .print-area { box-shadow: none !important; border-radius: 0 !important; padding: 0 !important; width: 100% !important; }
+  .week-block, .day-block, .exercise-card, .report-card { break-inside: avoid; page-break-inside: avoid; }
+  .week-block { margin-bottom: 16px !important; }
+  button { display: none !important; }
+  .report-card, .report-card * { background: #ffffff !important; color: #000000 !important; border-color: #cccccc !important; }
+}
+
+/* Stage 16.1 - professional admin navigation */
+.admin-page-offset {
+  min-height: 100vh;
+  padding-top: 94px;
+}
+
+@media (max-width: 767px) {
+  .admin-page-offset {
+    padding-top: 122px;
+  }
+}
+
+@media print {
+  .admin-page-offset {
+    padding-top: 0 !important;
+  }
+}

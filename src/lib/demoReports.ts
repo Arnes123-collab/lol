@@ -1,0 +1,47 @@
+import type { ClientTrainingReport } from '@/types/report';
+
+export const demoTrainingReports: ClientTrainingReport[] = [
+  {
+    id: 'report-demo-1',
+    clientName: 'Иван',
+    whatsapp: '+7 777 111 22 33',
+    trainingDate: '2026-06-02',
+    planTitle: 'Жим лёжа - плечо под контролем',
+    trainingDay: 'Понедельник - жим классика',
+    status: 'completed',
+    bodyweight: '89',
+    mood: 8,
+    energy: 7,
+    painLevel: 2,
+    painZone: 'shoulder',
+    workingSets: [
+      { id: 's1', exerciseName: 'Жим лёжа', weight: '100', sets: '4', reps: '5', rpe: '7' },
+      { id: 's2', exerciseName: 'Тяга штанги в наклоне', weight: '70', sets: '3', reps: '10', rpe: '6' },
+      { id: 's3', exerciseName: 'Face Pull', weight: '25', sets: '3', reps: '15', rpe: '5' },
+    ],
+    clientComment: 'Плечо не стреляет, но в последнем подходе чувствовал усталость.',
+    coachQuestion: 'Можно ли добавить 2,5 кг на следующей тренировке?',
+    createdAt: '2026-06-02T18:30:00.000Z',
+  },
+  {
+    id: 'report-demo-2',
+    clientName: 'Сергей',
+    whatsapp: '+7 701 222 33 44',
+    trainingDate: '2026-06-01',
+    planTitle: 'База 2 недели',
+    trainingDay: 'Среда - объём',
+    status: 'partial',
+    bodyweight: '96',
+    mood: 5,
+    energy: 4,
+    painLevel: 6,
+    painZone: 'lower_back',
+    workingSets: [
+      { id: 's1', exerciseName: 'Присед', weight: '110', sets: '3', reps: '5', rpe: '8' },
+      { id: 's2', exerciseName: 'Гиперэкстензия', weight: '0', sets: '2', reps: '12', rpe: '6' },
+    ],
+    clientComment: 'Сделал не всё. Поясница забилась после приседа.',
+    coachQuestion: 'Нужно ли убрать присед на этой неделе?',
+    createdAt: '2026-06-01T16:10:00.000Z',
+  },
+];
